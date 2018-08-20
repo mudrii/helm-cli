@@ -3,7 +3,7 @@ FROM alpine:latest
 
 # Helm versioni https://github.com/kubernetes/helm/releases
 
-ENV HELM_VERSION v2.9.1
+ENV HELM_VERSION v2.10.0
 
 RUN apk --no-cache update && \
     apk --no-cache add \
