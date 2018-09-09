@@ -1,8 +1,10 @@
 FROM alpine:latest
 
+RUN deluser guest ; delgroup users
+RUN addgroup -g 985 -S users
+RUN adduser -S -G users -u 1000 -s /bin/sh -h /home/mudrii mudrii
 
 # Helm versioni https://github.com/kubernetes/helm/releases
-
 ENV HELM_VERSION v2.10.0
 
 RUN apk --no-cache update && \
@@ -17,3 +19,5 @@ RUN apk --no-cache update && \
     rm -rf linux-amd64 && \
     apk --purge del curl && \
     rm /var/cache/apk/*
+
+USER mudrii
