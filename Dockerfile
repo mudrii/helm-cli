@@ -17,7 +17,6 @@ RUN apk --no-cache update && \
     mv linux-amd64/helm /usr/local/bin/ && \
 #    rm helm-${HELM_VERSION}-linux-amd64.tar.gz && \
     rm -rf linux-amd64 && \
-    apk --purge del curl && \
-    rm /var/cache/apk/*
+    apk --purge del curl
 
 USER mudrii
