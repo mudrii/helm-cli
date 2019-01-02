@@ -5,7 +5,7 @@ RUN addgroup -g 985 -S users
 RUN adduser -S -G users -u 1000 -s /bin/sh -h /home/mudrii mudrii
 
 # Helm versioni https://github.com/kubernetes/helm/releases
-ENV HELM_VERSION v2.11.0
+ENV HELM_VERSION v2.12.1
 
 RUN apk --no-cache update && \
     apk --no-cache add \
